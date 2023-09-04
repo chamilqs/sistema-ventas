@@ -623,7 +623,7 @@ public class PanelCaja extends javax.swing.JPanel {
         ContentAll = new javax.swing.JPanel();
         scrollTablaCaja = new javax.swing.JScrollPane();
         TablaCaja = new javax.swing.JTable();
-        TabResumenSalida = new MaterialTabbed();
+        TabResumenSalida = new Utils.MaterialTabbed();
         ContentResumenDia = new javax.swing.JPanel();
         PanelDatosResumenDia = new javax.swing.JPanel();
         LblTotalVendido = new javax.swing.JLabel();
@@ -635,6 +635,7 @@ public class PanelCaja extends javax.swing.JPanel {
         LblMontoCierreCaja = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         MontoGastoCajaChica = new javax.swing.JLabel();
+        LblResumen = new javax.swing.JLabel();
         ContentSalidaDinero = new javax.swing.JPanel();
         PanelDatosSalida = new javax.swing.JPanel();
         LblConcepto = new javax.swing.JLabel();
@@ -664,6 +665,7 @@ public class PanelCaja extends javax.swing.JPanel {
         PanelDivisor4 = new javax.swing.JPanel();
         PanelDivisor3 = new javax.swing.JPanel();
         btnSetMontoInicial = new rojerusan.RSMaterialButtonRectangle();
+        PanelDivisor5 = new javax.swing.JPanel();
 
         setMinimumSize(new java.awt.Dimension(1005, 660));
         setPreferredSize(new java.awt.Dimension(1005, 660));
@@ -704,7 +706,7 @@ public class PanelCaja extends javax.swing.JPanel {
             TablaCaja.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        ContentAll.add(scrollTablaCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 570, 480));
+        ContentAll.add(scrollTablaCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 580, 480));
 
         TabResumenSalida.setBackground(new java.awt.Color(69, 98, 126));
         TabResumenSalida.setForeground(new java.awt.Color(255, 255, 255));
@@ -762,7 +764,12 @@ public class PanelCaja extends javax.swing.JPanel {
         MontoGastoCajaChica.setText("0.0");
         PanelDatosResumenDia.add(MontoGastoCajaChica, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 110, 105, 22));
 
-        ContentResumenDia.add(PanelDatosResumenDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 330, 290));
+        ContentResumenDia.add(PanelDatosResumenDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 60, 330, 290));
+
+        LblResumen.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        LblResumen.setForeground(new java.awt.Color(255, 255, 255));
+        LblResumen.setText("RESUMEN DEL DÍA");
+        ContentResumenDia.add(LblResumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 170, 20));
 
         TabResumenSalida.addTab("                               Resumen Diario                             ", ContentResumenDia);
 
@@ -813,7 +820,7 @@ public class PanelCaja extends javax.swing.JPanel {
         LblSalidaCaja.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         LblSalidaCaja.setForeground(new java.awt.Color(255, 255, 255));
         LblSalidaCaja.setText("SALIDA DE CAJA");
-        ContentSalidaDinero.add(LblSalidaCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 155, 20));
+        ContentSalidaDinero.add(LblSalidaCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 30, 155, 20));
 
         TabResumenSalida.addTab("                            Registrar Salida                         ", ContentSalidaDinero);
 
@@ -899,14 +906,14 @@ public class PanelCaja extends javax.swing.JPanel {
         LblMontoActual.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         LblMontoActual.setForeground(new java.awt.Color(255, 255, 255));
         LblMontoActual.setText("Monto Actual: RD$");
-        ContentAll.add(LblMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, 40));
+        ContentAll.add(LblMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, 40));
 
         DineroMontoActual.setBackground(new java.awt.Color(51, 51, 51));
         DineroMontoActual.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         DineroMontoActual.setForeground(new java.awt.Color(255, 255, 255));
         DineroMontoActual.setText("0.0");
         DineroMontoActual.setToolTipText("");
-        ContentAll.add(DineroMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 90, 40));
+        ContentAll.add(DineroMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 90, 40));
 
         PanelDivisor2.setBackground(new java.awt.Color(132, 178, 80));
 
@@ -921,7 +928,7 @@ public class PanelCaja extends javax.swing.JPanel {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        ContentAll.add(PanelDivisor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 10, 660));
+        ContentAll.add(PanelDivisor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(995, 0, 10, 660));
 
         btnAbrirCaja.setBackground(new java.awt.Color(69, 98, 126));
         btnAbrirCaja.setText("Abrir");
@@ -957,7 +964,7 @@ public class PanelCaja extends javax.swing.JPanel {
         LblCajaCobro.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         LblCajaCobro.setForeground(new java.awt.Color(0, 112, 192));
         LblCajaCobro.setText("Caja de cobro");
-        ContentAll.add(LblCajaCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, -1, -1));
+        ContentAll.add(LblCajaCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
         ContentAll.add(CajaR, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 140, 130));
 
         PanelDivisor1.setBackground(new java.awt.Color(132, 178, 80));
@@ -997,6 +1004,21 @@ public class PanelCaja extends javax.swing.JPanel {
             }
         });
         ContentAll.add(btnSetMontoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 60, 40));
+
+        PanelDivisor5.setBackground(new java.awt.Color(132, 178, 80));
+
+        javax.swing.GroupLayout PanelDivisor5Layout = new javax.swing.GroupLayout(PanelDivisor5);
+        PanelDivisor5.setLayout(PanelDivisor5Layout);
+        PanelDivisor5Layout.setHorizontalGroup(
+            PanelDivisor5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelDivisor5Layout.setVerticalGroup(
+            PanelDivisor5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        ContentAll.add(PanelDivisor5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 10, 660));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -1066,6 +1088,7 @@ public class PanelCaja extends javax.swing.JPanel {
     private javax.swing.JLabel LblMontoInici4l;
     private javax.swing.JLabel LblMontoSalida;
     private javax.swing.JLabel LblPendienteCobrar;
+    private javax.swing.JLabel LblResumen;
     private javax.swing.JLabel LblSalidaCaja;
     private javax.swing.JLabel LblTotalVendido;
     private javax.swing.JLabel LblUser;
@@ -1077,9 +1100,10 @@ public class PanelCaja extends javax.swing.JPanel {
     private javax.swing.JPanel PanelDivisor2;
     private javax.swing.JPanel PanelDivisor3;
     private javax.swing.JPanel PanelDivisor4;
+    private javax.swing.JPanel PanelDivisor5;
     private javax.swing.JLabel ResumenTotalVendido;
     private javax.swing.JScrollPane ScrollSalida;
-    private MaterialTabbed TabResumenSalida;
+    private Utils.MaterialTabbed TabResumenSalida;
     private javax.swing.JTable TablaCaja;
     private javax.swing.JTable TablaSalida;
     private rojerusan.RSMaterialButtonRectangle btnAbrirCaja;

@@ -140,7 +140,7 @@ public class DeudaClientes extends javax.swing.JDialog {
                 conectar.setAutoCommit(true);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(PanelVenta.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeudaClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

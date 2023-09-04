@@ -205,10 +205,10 @@ public class Principal extends javax.swing.JPanel {
         imgContent = new javax.swing.JPanel();
         CajaVerde = new javax.swing.JLabel();
         PanelGraficoPrincipal = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        Separador = new javax.swing.JPanel();
+        LblTitulo = new javax.swing.JLabel();
+        Separador2 = new javax.swing.JPanel();
+        Separador3 = new javax.swing.JPanel();
         LblEstadoCaja = new javax.swing.JLabel();
         LblEstadoC = new javax.swing.JLabel();
 
@@ -226,7 +226,7 @@ public class Principal extends javax.swing.JPanel {
 
         LblBienvenidos.setFont(new java.awt.Font("Montserrat", 3, 14)); // NOI18N
         LblBienvenidos.setForeground(new java.awt.Color(0, 204, 51));
-        LblBienvenidos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LblBienvenidos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Content.add(LblBienvenidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 280, 30));
 
         BtnNuevaVenta.setBackground(new java.awt.Color(132, 178, 80));
@@ -246,28 +246,28 @@ public class Principal extends javax.swing.JPanel {
         BtnNuevaVenta.setLayout(BtnNuevaVentaLayout);
         BtnNuevaVentaLayout.setHorizontalGroup(
             BtnNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1010, Short.MAX_VALUE)
+            .addGap(0, 1008, Short.MAX_VALUE)
         );
         BtnNuevaVentaLayout.setVerticalGroup(
             BtnNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 15, Short.MAX_VALUE)
         );
 
-        Content.add(BtnNuevaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1010, 70));
+        Content.add(BtnNuevaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 645, 1008, 15));
 
         DateTime.setBackground(new java.awt.Color(255, 255, 255));
         DateTime.setLayout(new java.awt.BorderLayout());
         Content.add(DateTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, 290, 120));
 
         imgContent.setBackground(new java.awt.Color(255, 255, 255));
-        imgContent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgContent.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         imgContent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imgContentMouseClicked(evt);
             }
         });
 
-        CajaVerde.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CajaVerde.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CajaVerde.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CajaVerdeMouseClicked(evt);
@@ -300,64 +300,64 @@ public class Principal extends javax.swing.JPanel {
         PanelGraficoPrincipal.setLayout(PanelGraficoPrincipalLayout);
         PanelGraficoPrincipalLayout.setHorizontalGroup(
             PanelGraficoPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGap(0, 635, Short.MAX_VALUE)
         );
         PanelGraficoPrincipalLayout.setVerticalGroup(
             PanelGraficoPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        Content.add(PanelGraficoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 640, 450));
+        Content.add(PanelGraficoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 140, 635, 450));
 
-        jPanel1.setBackground(new java.awt.Color(132, 178, 80));
+        Separador.setBackground(new java.awt.Color(132, 178, 80));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SeparadorLayout = new javax.swing.GroupLayout(Separador);
+        Separador.setLayout(SeparadorLayout);
+        SeparadorLayout.setHorizontalGroup(
+            SeparadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 10, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+        SeparadorLayout.setVerticalGroup(
+            SeparadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 645, Short.MAX_VALUE)
         );
 
-        Content.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 10, 590));
+        Content.add(Separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 10, 645));
 
-        jLabel2.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Productos mas vendidos");
-        Content.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
+        LblTitulo.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        LblTitulo.setForeground(new java.awt.Color(51, 51, 51));
+        LblTitulo.setText("Productos mas vendidos");
+        Content.add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(132, 178, 80));
+        Separador2.setBackground(new java.awt.Color(132, 178, 80));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+        javax.swing.GroupLayout Separador2Layout = new javax.swing.GroupLayout(Separador2);
+        Separador2.setLayout(Separador2Layout);
+        Separador2Layout.setHorizontalGroup(
+            Separador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 15, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
-        );
-
-        Content.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 0, 20, -1));
-
-        jPanel3.setBackground(new java.awt.Color(132, 178, 80));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+        Separador2Layout.setVerticalGroup(
+            Separador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 645, Short.MAX_VALUE)
         );
 
-        Content.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Content.add(Separador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 0, 15, 645));
+
+        Separador3.setBackground(new java.awt.Color(132, 178, 80));
+
+        javax.swing.GroupLayout Separador3Layout = new javax.swing.GroupLayout(Separador3);
+        Separador3.setLayout(Separador3Layout);
+        Separador3Layout.setHorizontalGroup(
+            Separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 15, Short.MAX_VALUE)
+        );
+        Separador3Layout.setVerticalGroup(
+            Separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 645, Short.MAX_VALUE)
+        );
+
+        Content.add(Separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 15, 645));
 
         LblEstadoCaja.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
         LblEstadoCaja.setForeground(new java.awt.Color(0, 204, 0));
@@ -393,11 +393,11 @@ public class Principal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnNuevaVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnNuevaVentaMouseEntered
-        BtnNuevaVenta.setBackground(new Color(85, 115, 52));
+        // BtnNuevaVenta.setBackground(new Color(85, 115, 52));
     }//GEN-LAST:event_BtnNuevaVentaMouseEntered
 
     private void BtnNuevaVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnNuevaVentaMouseExited
-        BtnNuevaVenta.setBackground(new Color(132,178,80));
+        // BtnNuevaVenta.setBackground(new Color(132,178,80));
     }//GEN-LAST:event_BtnNuevaVentaMouseExited
 
     private void BtnNuevaVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnNuevaVentaMouseClicked
@@ -434,12 +434,12 @@ public class Principal extends javax.swing.JPanel {
     private javax.swing.JLabel LblBienvenidos;
     private javax.swing.JLabel LblEstadoC;
     private javax.swing.JLabel LblEstadoCaja;
+    private javax.swing.JLabel LblTitulo;
     private javax.swing.JPanel PanelGraficoPrincipal;
+    private javax.swing.JPanel Separador;
+    private javax.swing.JPanel Separador2;
+    private javax.swing.JPanel Separador3;
     private javax.swing.JPanel imgContent;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

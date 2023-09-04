@@ -82,7 +82,7 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
 
         
         
-         Utils.setScaledImage(IconLogo1, "ParadaLogo.png", 200, 200);
+         Utils.setScaledImage(IconLogo1, "MiLogo.png", 200, 200);
     } 
     
         public ConfirmarAcceso(java.awt.Frame parent, boolean modal, Usuario u) {
@@ -127,7 +127,7 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
 
         
         
-         Utils.setScaledImage(IconLogo1, "ParadaLogo.png", 200, 200);
+         Utils.setScaledImage(IconLogo1, "MiLogo.png", 200, 200);
     } 
     
         public static interface VerificacionListener {
@@ -149,7 +149,7 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
         IconLogo1 = new javax.swing.JLabel();
         LblUtilidad4 = new javax.swing.JLabel();
         LblNotificacion = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        Contrasenha = new javax.swing.JLabel();
         PanelMoveLogin = new javax.swing.JPanel();
         btnSalir1 = new rojerusan.RSMaterialButtonRectangle();
 
@@ -174,7 +174,7 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
                 txtPassKeyTyped(evt);
             }
         });
-        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 140, -1));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 289, 140, -1));
 
         IconLogo1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(IconLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 187, 151));
@@ -191,10 +191,10 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
         LblNotificacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(LblNotificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 180, 20));
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Password:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+        Contrasenha.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        Contrasenha.setForeground(new java.awt.Color(255, 255, 255));
+        Contrasenha.setText("Contraseña:");
+        jPanel1.add(Contrasenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 290, -1, -1));
 
         PanelMoveLogin.setBackground(new java.awt.Color(24, 39, 72));
         PanelMoveLogin.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -222,9 +222,8 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
         PanelMoveLoginLayout.setHorizontalGroup(
             PanelMoveLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMoveLoginLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 364, Short.MAX_VALUE))
         );
         PanelMoveLoginLayout.setVerticalGroup(
             PanelMoveLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,13 +373,13 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Contrasenha;
     private javax.swing.JLabel IconLogo;
     private javax.swing.JLabel IconLogo1;
     private javax.swing.JLabel LblNotificacion;
     private javax.swing.JLabel LblUtilidad4;
     private javax.swing.JPanel PanelMoveLogin;
     private rojerusan.RSMaterialButtonRectangle btnSalir1;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables

@@ -37,7 +37,7 @@ public class LoginParada extends javax.swing.JFrame {
             }
         });
         
-        Utils.setScaledImage(IconLogo, "ParadaLogo.png", 300, 300);
+        Utils.setScaledImage(IconLogo, "MiLogo.png", 300, 300);
 
     }
     
@@ -61,7 +61,6 @@ public class LoginParada extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(24, 39, 72));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(650, 400));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -71,6 +70,7 @@ public class LoginParada extends javax.swing.JFrame {
                 PanelMoveLoginMouseDragged(evt);
             }
         });
+        PanelMoveLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSalir.setBackground(new java.awt.Color(24, 39, 72));
         btnSalir.setText("X");
@@ -85,24 +85,9 @@ public class LoginParada extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
+        PanelMoveLogin.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 26, 25));
 
-        javax.swing.GroupLayout PanelMoveLoginLayout = new javax.swing.GroupLayout(PanelMoveLogin);
-        PanelMoveLogin.setLayout(PanelMoveLoginLayout);
-        PanelMoveLoginLayout.setHorizontalGroup(
-            PanelMoveLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMoveLoginLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(618, Short.MAX_VALUE))
-        );
-        PanelMoveLoginLayout.setVerticalGroup(
-            PanelMoveLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMoveLoginLayout.createSequentialGroup()
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(PanelMoveLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 40));
+        getContentPane().add(PanelMoveLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 30));
 
         jPanel1.setBackground(new java.awt.Color(24, 39, 72));
         jPanel1.setPreferredSize(new java.awt.Dimension(640, 437));
@@ -126,8 +111,8 @@ public class LoginParada extends javax.swing.JFrame {
         jPanel3.add(TxtCorreo_Nombre_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 190, 30));
 
         jLabel1.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 48)); // NOI18N
-        jLabel1.setText("Bienvenidos");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 60));
+        jLabel1.setText("Bienvenido");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 50, -1, 60));
 
         TxtPassword.setForeground(new java.awt.Color(153, 153, 153));
         TxtPassword.setText("**********");
@@ -165,7 +150,7 @@ public class LoginParada extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(IconLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addComponent(IconLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
@@ -182,7 +167,7 @@ public class LoginParada extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 660, 370));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 650, 370));
 
         pack();
         setLocationRelativeTo(null);

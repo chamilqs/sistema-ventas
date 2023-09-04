@@ -6,20 +6,18 @@ import Caja.PanelCaja;
 import Contabilidad.TabContabilidad;
 import Inventario.PanelInventario;
 import Utils.Utils;
-import Venta.PanelVenta;
 import java.awt.Color;
 import java.awt.Frame;
 import DTO.Usuario;
 import Historial.PanelHistorial;
 import Productos.CatalogoProducto;
 import Reporte.ReportesGeneral;
+import raven.glasspanepopup.GlassPanePopup;
 import Venta.FacturacionVenta;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 /**
  *
@@ -39,11 +37,13 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
     public FramePrincipal() {
         initComponents();        
         inicializar();
+        GlassPanePopup.install(this);
 }
     
     public FramePrincipal(Usuario u) {
         this.u = u;    
         initComponents();
+        GlassPanePopup.install(this);
         inicializar(); 
        
 }
@@ -119,7 +119,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
     Utils.setScaledImage(IconContabilidad, "Contabilidad.png", ICON_WIDTH, ICON_HEIGHT);
     Utils.setScaledImage(IconInventario, "inventario.png", ICON_WIDTH, ICON_HEIGHT);
     Utils.setScaledImage(IconProducto, "Producto.png", ICON_WIDTH, ICON_HEIGHT);
-    Utils.setScaledImage(IconLogo, "ParadaLogo.png", 200, 200);
+    Utils.setScaledImage(IconLogo, "MiLogo.png", 200, 200);
     Utils.setScaledImage(IconAcceso, "acceso.png", ICON_WIDTH, ICON_HEIGHT);
     Utils.setScaledImage(IconReportes, "Reporte.png", ICON_WIDTH, ICON_HEIGHT);
     Utils.setScaledImage(IconHistorial, "historial.png", ICON_WIDTH, ICON_HEIGHT);
@@ -244,7 +244,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         IconLogo.setForeground(new java.awt.Color(255, 255, 255));
 
         BtnCasa.setBackground(new java.awt.Color(24, 39, 72));
-        BtnCasa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCasa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnCasa.setRequestFocusEnabled(false);
         BtnCasa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -253,13 +253,13 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconCasa.setForeground(new java.awt.Color(255, 255, 255));
-        IconCasa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconCasa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         IconCasa.setPreferredSize(new java.awt.Dimension(25, 25));
 
         Lblcasa.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         Lblcasa.setForeground(new java.awt.Color(255, 255, 255));
         Lblcasa.setText("Principal");
-        Lblcasa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Lblcasa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Lblcasa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblcasaMouseClicked(evt);
@@ -293,7 +293,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnContabilidad.setBackground(new java.awt.Color(24, 39, 72));
-        BtnContabilidad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnContabilidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnContabilidad.setRequestFocusEnabled(false);
         BtnContabilidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -302,7 +302,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconContabilidad.setForeground(new java.awt.Color(255, 255, 255));
-        IconContabilidad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconContabilidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         LblContabilidad.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblContabilidad.setForeground(new java.awt.Color(255, 255, 255));
@@ -334,7 +334,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnProducto.setBackground(new java.awt.Color(24, 39, 72));
-        BtnProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnProducto.setRequestFocusEnabled(false);
         BtnProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -343,7 +343,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconProducto.setForeground(new java.awt.Color(255, 255, 255));
-        IconProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         IconProducto.setMaximumSize(new java.awt.Dimension(67, 16));
         IconProducto.setMinimumSize(new java.awt.Dimension(67, 16));
         IconProducto.setPreferredSize(new java.awt.Dimension(20, 20));
@@ -351,7 +351,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         LblProductos.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblProductos.setForeground(new java.awt.Color(255, 255, 255));
         LblProductos.setText("Productos");
-        LblProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblProductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblProductosMouseClicked(evt);
@@ -379,7 +379,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnAcceso.setBackground(new java.awt.Color(24, 39, 72));
-        BtnAcceso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnAcceso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnAcceso.setRequestFocusEnabled(false);
         BtnAcceso.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -388,13 +388,13 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconAcceso.setForeground(new java.awt.Color(255, 255, 255));
-        IconAcceso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconAcceso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         IconAcceso.setPreferredSize(new java.awt.Dimension(20, 20));
 
         LblAccesos.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblAccesos.setForeground(new java.awt.Color(255, 255, 255));
         LblAccesos.setText("Accesos");
-        LblAccesos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblAccesos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblAccesos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblAccesosMouseClicked(evt);
@@ -422,7 +422,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnCaja.setBackground(new java.awt.Color(24, 39, 72));
-        BtnCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnCaja.setRequestFocusEnabled(false);
         BtnCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -431,12 +431,12 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconCaja.setForeground(new java.awt.Color(255, 255, 255));
-        IconCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         LblCaja.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblCaja.setForeground(new java.awt.Color(255, 255, 255));
         LblCaja.setText("Caja");
-        LblCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblCajaMouseClicked(evt);
@@ -464,7 +464,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnReportes.setBackground(new java.awt.Color(24, 39, 72));
-        BtnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnReportes.setRequestFocusEnabled(false);
         BtnReportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -473,12 +473,12 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconReportes.setForeground(new java.awt.Color(255, 255, 255));
-        IconReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         LblReportes.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblReportes.setForeground(new java.awt.Color(255, 255, 255));
         LblReportes.setText("Reportes");
-        LblReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblReportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblReportesMouseClicked(evt);
@@ -506,7 +506,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnVentas.setBackground(new java.awt.Color(24, 39, 72));
-        BtnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnVentas.setRequestFocusEnabled(false);
         BtnVentas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -515,12 +515,12 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconVentas.setForeground(new java.awt.Color(255, 255, 255));
-        IconVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         LblVentas.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblVentas.setForeground(new java.awt.Color(255, 255, 255));
         LblVentas.setText("Ventas");
-        LblVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblVentas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblVentasMouseClicked(evt);
@@ -548,7 +548,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnInventario.setBackground(new java.awt.Color(24, 39, 72));
-        BtnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnInventario.setRequestFocusEnabled(false);
         BtnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -557,12 +557,12 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconInventario.setForeground(new java.awt.Color(255, 255, 255));
-        IconInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         LblInventario.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblInventario.setForeground(new java.awt.Color(255, 255, 255));
         LblInventario.setText("Inventario");
-        LblInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblInventarioMouseClicked(evt);
@@ -590,7 +590,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         );
 
         BtnHistorial.setBackground(new java.awt.Color(24, 39, 72));
-        BtnHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnHistorial.setRequestFocusEnabled(false);
         BtnHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -599,12 +599,12 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         });
 
         IconHistorial.setForeground(new java.awt.Color(255, 255, 255));
-        IconHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         LblHistorial.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         LblHistorial.setForeground(new java.awt.Color(255, 255, 255));
         LblHistorial.setText("Historial");
-        LblHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LblHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LblHistorialMouseClicked(evt);
@@ -635,7 +635,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         btninfo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btninfo.setForeground(new java.awt.Color(24, 39, 72));
         btninfo.setText("I");
-        btninfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btninfo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btninfo.setFont(new java.awt.Font("Roboto Light", 1, 10)); // NOI18N
         btninfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -698,8 +698,11 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         PanelBarGreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtnUser.setBackground(new java.awt.Color(132, 178, 80));
-        BtnUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnUserMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BtnUserMouseEntered(evt);
             }
@@ -711,7 +714,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
             }
         });
 
-        IconUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        IconUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         IconUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 IconUserMouseEntered(evt);
@@ -719,21 +722,24 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 IconUserMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                IconUserMousePressed(evt);
+            }
         });
 
         TipoUser.setBackground(new java.awt.Color(255, 255, 255));
         TipoUser.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         TipoUser.setForeground(new java.awt.Color(255, 255, 255));
         TipoUser.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        TipoUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TipoUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout BtnUserLayout = new javax.swing.GroupLayout(BtnUser);
         BtnUser.setLayout(BtnUserLayout);
         BtnUserLayout.setHorizontalGroup(
             BtnUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BtnUserLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(TipoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(IconUser, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -752,7 +758,7 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
         PanelBarGreen.add(BtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1091, 0, -1, 40));
 
         PanelMoveLogin.setBackground(new java.awt.Color(132, 178, 80));
-        PanelMoveLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        PanelMoveLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelMoveLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LblEncabezado.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -1047,9 +1053,9 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
     }//GEN-LAST:event_LblVentasMouseClicked
 
     private void BtnUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnUserMousePressed
-            CerrarSesion CS = new CerrarSesion(u);
-            CS.setLocationRelativeTo(this); 
-            CS.setVisible(true);       
+    GlassPanePopup.showPopup(new CerrarSesionP(u));    
+        
+      
     }//GEN-LAST:event_BtnUserMousePressed
 
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
@@ -1082,6 +1088,19 @@ public class FramePrincipal extends javax.swing.JFrame implements ConfirmarAcces
     private void btnMinimizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizar2ActionPerformed
           this.setState(Frame.ICONIFIED); 
     }//GEN-LAST:event_btnMinimizar2ActionPerformed
+
+    private void BtnUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnUserMouseClicked
+        GlassPanePopup.showPopup(new CerrarSesionP(u));    
+        
+        /*CerrarSesion CS = new CerrarSesion(u);
+        CS.setLocationRelativeTo(this); 
+        CS.setVisible(true);*/   
+    }//GEN-LAST:event_BtnUserMouseClicked
+
+    private void IconUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconUserMousePressed
+        // TODO add your handling code here:
+        GlassPanePopup.showPopup(new CerrarSesionP(u)); 
+    }//GEN-LAST:event_IconUserMousePressed
 
     public void realizarAccionesSegunPassword() {
         if (isPasswordClicked) {

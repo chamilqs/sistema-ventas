@@ -158,9 +158,12 @@ public class FacturacionVenta extends javax.swing.JPanel {
         Agregaralalista = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         LblAdvertencia = new javax.swing.JLabel();
-        LblUtilidad4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        LblTitulo = new javax.swing.JLabel();
+        TituloIDVenta = new javax.swing.JLabel();
         LblIDVenta = new javax.swing.JLabel();
+        Separador3 = new javax.swing.JPanel();
+        Separador4 = new javax.swing.JPanel();
+        Separador5 = new javax.swing.JPanel();
 
         ContentPanelVenta.setBackground(new java.awt.Color(24, 39, 72));
         ContentPanelVenta.setPreferredSize(new java.awt.Dimension(1005, 660));
@@ -202,7 +205,7 @@ public class FacturacionVenta extends javax.swing.JPanel {
             tablaProductosVentas.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        ContentPanelVenta.add(ScrollPanelVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 620, 470));
+        ContentPanelVenta.add(ScrollPanelVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 610, 530));
 
         PanelContenido.setBackground(new java.awt.Color(255, 255, 255));
         PanelContenido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -288,12 +291,12 @@ public class FacturacionVenta extends javax.swing.JPanel {
         LblDevuelta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblDevuelta.setText("0");
         LblDevuelta.setOpaque(true);
-        PanelContenido.add(LblDevuelta, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 90, 20));
+        PanelContenido.add(LblDevuelta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 90, 20));
 
         LblDevueltaMonto.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         LblDevueltaMonto.setForeground(new java.awt.Color(0, 0, 0));
         LblDevueltaMonto.setText("Devolver:");
-        PanelContenido.add(LblDevueltaMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 60, 20));
+        PanelContenido.add(LblDevueltaMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 380, 70, 20));
 
         LblMontoPagado.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         LblMontoPagado.setForeground(new java.awt.Color(0, 0, 0));
@@ -311,7 +314,7 @@ public class FacturacionVenta extends javax.swing.JPanel {
         LblMontoPagar.setForeground(new java.awt.Color(0, 204, 0));
         LblMontoPagar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblMontoPagar.setText("0");
-        PanelContenido.add(LblMontoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 90, 30));
+        PanelContenido.add(LblMontoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 90, 30));
 
         jPanel1.setBackground(new java.awt.Color(0, 112, 192));
 
@@ -481,20 +484,65 @@ public class FacturacionVenta extends javax.swing.JPanel {
 
         ContentPanelVenta.add(PanelContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 290, 530));
 
-        LblUtilidad4.setBackground(new java.awt.Color(255, 255, 255));
-        LblUtilidad4.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
-        LblUtilidad4.setForeground(new java.awt.Color(0, 112, 192));
-        LblUtilidad4.setText("Facturacion");
-        ContentPanelVenta.add(LblUtilidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+        LblTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        LblTitulo.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        LblTitulo.setForeground(new java.awt.Color(0, 112, 192));
+        LblTitulo.setText("Facturacion");
+        ContentPanelVenta.add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Idventa / No. Factura:");
-        ContentPanelVenta.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, -1, 30));
+        TituloIDVenta.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        TituloIDVenta.setForeground(new java.awt.Color(255, 255, 255));
+        TituloIDVenta.setText("Idventa / No. Factura:");
+        ContentPanelVenta.add(TituloIDVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, -1, 30));
 
         LblIDVenta.setForeground(new java.awt.Color(51, 255, 51));
         LblIDVenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ContentPanelVenta.add(LblIDVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 90, 30));
+
+        Separador3.setBackground(new java.awt.Color(132, 178, 80));
+
+        javax.swing.GroupLayout Separador3Layout = new javax.swing.GroupLayout(Separador3);
+        Separador3.setLayout(Separador3Layout);
+        Separador3Layout.setHorizontalGroup(
+            Separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1010, Short.MAX_VALUE)
+        );
+        Separador3Layout.setVerticalGroup(
+            Separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        ContentPanelVenta.add(Separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 650, 1010, 10));
+
+        Separador4.setBackground(new java.awt.Color(132, 178, 80));
+
+        javax.swing.GroupLayout Separador4Layout = new javax.swing.GroupLayout(Separador4);
+        Separador4.setLayout(Separador4Layout);
+        Separador4Layout.setHorizontalGroup(
+            Separador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
+        );
+        Separador4Layout.setVerticalGroup(
+            Separador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+
+        ContentPanelVenta.add(Separador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 8, 660));
+
+        Separador5.setBackground(new java.awt.Color(132, 178, 80));
+
+        javax.swing.GroupLayout Separador5Layout = new javax.swing.GroupLayout(Separador5);
+        Separador5.setLayout(Separador5Layout);
+        Separador5Layout.setHorizontalGroup(
+            Separador5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
+        );
+        Separador5Layout.setVerticalGroup(
+            Separador5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+
+        ContentPanelVenta.add(Separador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(997, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -1851,13 +1899,16 @@ if (productosSuperanStock) {
     private static javax.swing.JLabel LblPrecioProducto;
     private javax.swing.JLabel LblSize;
     private static javax.swing.JLabel LblSizeProducto;
+    private javax.swing.JLabel LblTitulo;
     private javax.swing.JLabel LblTotalPagar;
-    private javax.swing.JLabel LblUtilidad4;
     private javax.swing.JPanel PanelContenido;
     private javax.swing.JScrollPane ScrollPanelVenta;
+    private javax.swing.JPanel Separador3;
+    private javax.swing.JPanel Separador4;
+    private javax.swing.JPanel Separador5;
+    private javax.swing.JLabel TituloIDVenta;
     private rojerusan.RSMaterialButtonRectangle btnCotizar;
     private rojerusan.RSMaterialButtonRectangle btnFacturar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     public static javax.swing.JTextField montoIngresado;

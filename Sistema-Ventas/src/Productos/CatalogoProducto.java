@@ -597,12 +597,11 @@ private void update() {
     
     private void actualizarTabla()
     {
-               try {
-            DefaultTableModel model = (DefaultTableModel) tablaCatalogo.getModel();
-
-            Updater.Updater.actualizarTabla("producto", model);
-           // tablaCatalogo.setModel(model);
+        try {
             
+         DefaultTableModel model = (DefaultTableModel) tablaCatalogo.getModel();
+         Updater.Updater.actualizarTabla("producto", model);   
+         
         } catch (SQLException ex) {
             Logger.getLogger(CatalogoProducto.class.getName()).log(Level.SEVERE, null, ex);
         } catch(Exception e)
