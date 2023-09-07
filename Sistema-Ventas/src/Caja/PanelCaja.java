@@ -906,14 +906,14 @@ public class PanelCaja extends javax.swing.JPanel {
         LblMontoActual.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         LblMontoActual.setForeground(new java.awt.Color(255, 255, 255));
         LblMontoActual.setText("Monto Actual: RD$");
-        ContentAll.add(LblMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, 40));
+        ContentAll.add(LblMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, -1, 40));
 
         DineroMontoActual.setBackground(new java.awt.Color(51, 51, 51));
         DineroMontoActual.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         DineroMontoActual.setForeground(new java.awt.Color(255, 255, 255));
         DineroMontoActual.setText("0.0");
         DineroMontoActual.setToolTipText("");
-        ContentAll.add(DineroMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 90, 40));
+        ContentAll.add(DineroMontoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 90, 40));
 
         PanelDivisor2.setBackground(new java.awt.Color(132, 178, 80));
 
@@ -964,7 +964,7 @@ public class PanelCaja extends javax.swing.JPanel {
         LblCajaCobro.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         LblCajaCobro.setForeground(new java.awt.Color(0, 112, 192));
         LblCajaCobro.setText("Caja de cobro");
-        ContentAll.add(LblCajaCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
+        ContentAll.add(LblCajaCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
         ContentAll.add(CajaR, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 140, 130));
 
         PanelDivisor1.setBackground(new java.awt.Color(132, 178, 80));

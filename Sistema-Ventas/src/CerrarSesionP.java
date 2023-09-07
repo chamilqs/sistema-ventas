@@ -191,8 +191,6 @@ int xMouse, yMouse;
             LocalDateTime fechaHoraActual = LocalDateTime.now();
             u.setLogout(fechaHoraActual);
 
-            System.out.println(fechaHoraActual);
-
             UsuarioDAOImpl ud = new UsuarioDAOImpl();
 
             PanelCaja pc = new PanelCaja(u);
@@ -201,7 +199,7 @@ int xMouse, yMouse;
             try {
                 ud.actualizarLogout(u);
             } catch (SQLException ex) {
-                Logger.getLogger(CerrarSesion.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CerrarSesionP.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             // Cerrar todas las ventanas abiertas

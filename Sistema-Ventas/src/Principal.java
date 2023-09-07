@@ -267,7 +267,7 @@ public class Principal extends javax.swing.JPanel {
             }
         });
 
-        CajaVerde.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        CajaVerde.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CajaVerde.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CajaVerdeMouseClicked(evt);
@@ -326,7 +326,7 @@ public class Principal extends javax.swing.JPanel {
 
         LblTitulo.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(51, 51, 51));
-        LblTitulo.setText("Productos mas vendidos");
+        LblTitulo.setText("Productos más vendidos:");
         Content.add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         Separador2.setBackground(new java.awt.Color(132, 178, 80));

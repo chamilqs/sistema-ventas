@@ -123,7 +123,6 @@ private void dibujarCuadroNombres(Graphics g) {
                     String nombre = resultSet.getString("nombre");
                     int ventas = resultSet.getInt("ventas");
                     String porcentajeStr = resultSet.getString("Porcentaje");  // Obtener el porcentaje como cadena
-                    System.out.println("Nombre: " + nombre + ", Ventas: " + ventas + ", Porcentaje: " + porcentajeStr);
 
                     Color color = colors[colorIndex];
                     productos.add(new Productos(nombre, ventas, porcentajeStr, color));  // Agregar el porcentaje a Productos
@@ -136,15 +135,5 @@ private void dibujarCuadroNombres(Graphics g) {
             e.printStackTrace();
         }
         return productos;
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Gráfico de Pastel");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(650, 450); // Ajusta el tamaño para dar espacio al cuadro de nombres
-            frame.add(new GraficosPrincipal());
-            frame.setVisible(true);
-        });
     }
 }

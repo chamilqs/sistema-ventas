@@ -303,7 +303,6 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
                     isPasswordClicked = true; // Establecer el valor booleano a true
 
                     if (verificacionListener != null) {
-                        System.out.println("llego");
                         verificacionListener.onVerificacionExitosa();
                         this.dispose();
                     }
@@ -314,7 +313,6 @@ public class ConfirmarAcceso extends javax.swing.JDialog {
                     LblNotificacion.setText("Contraseña incorrecta");
                     isPasswordClicked = false; // Establecer el valor booleano a false
                     if (verificacionListener != null) {
-                        System.out.println("No llego");
                         verificacionListener.onVerificacionFallida();
                     }
                 }

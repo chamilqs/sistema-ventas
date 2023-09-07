@@ -28,7 +28,6 @@ public class Conexion {
 
 		} catch (ClassNotFoundException e)
 		{
-			System.out.println("Error en el driver");
 			e.printStackTrace();		
 		}
 	}
@@ -41,7 +40,6 @@ public class Conexion {
 			conexion = DriverManager.getConnection(URL,USER,PASSWORD);
 						
 		} catch (SQLException e) {
-			System.out.println("Error en la conexion");
 			e.printStackTrace();
                         throw e;    
 		}

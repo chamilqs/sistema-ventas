@@ -113,17 +113,15 @@ public class GeneradorFacturaPDF {
             document.close();
             writer.close();
 
-            System.out.println("Factura generada exitosamente en " + nombreArchivo);
-
             // Abrir la factura automáticamente
             abrirFactura(nombreArchivo);
 
             // Enviar factura por correo electrónico
-            String remitente = "angelo.ferreras23@gmail.com";
-            String contraseña = "ixptbjicfedqabod";
-            String destinatario = "davielalexsanchez@gmail.com";
+            String remitente = "devsamil26@gmail.com";
+            String contraseña = "devsamil26";
+            String destinatario = "samilq26@gmail.com";
             String asunto = "Factura Adjunta";
-            String mensaje = "Estimado cliente, adjuntamos la factura en PDF de su compra en parada fria.";
+            String mensaje = "Estimado cliente, adjuntamos la factura en PDF de su compra.";
 
             enviarFacturaPorCorreo(remitente, contraseña, destinatario, asunto, mensaje, nombreArchivo);
         } catch (DocumentException e) {
@@ -139,13 +137,11 @@ public class GeneradorFacturaPDF {
             File archivo = new File(nombreArchivo);
             if (archivo.exists()) {
                 if (!archivo.canWrite()) {
-                    System.out.println("El archivo está siendo utilizado por otro proceso. Cerrando y abriendo nuevamente.");
                     Desktop.getDesktop().open(archivo);
                 } else {
                     Desktop.getDesktop().open(archivo);
                 }
             } else {
-                System.out.println("El archivo no existe.");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -198,9 +194,7 @@ public class GeneradorFacturaPDF {
 
             // Enviar el mensaje
             Transport.send(message);
-            System.out.println("Correo enviado exitosamente con el archivo adjunto.");
         }catch (MessagingException e) {
-            System.err.println("Error al enviar el correo: " + e.getMessage());
             e.printStackTrace();
         }
 

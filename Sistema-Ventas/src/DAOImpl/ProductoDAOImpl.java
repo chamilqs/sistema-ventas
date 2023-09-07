@@ -195,28 +195,18 @@ public class ProductoDAOImpl implements ProductoDAO{
             pst3.setString(1, id);
 
             result3 = pst3.executeUpdate();
-            
-            System.out.println("primera ejecucion");
-            
+                       
             pst2.setString(1, id);
 
             result2 = pst2.executeUpdate();
-
-            System.out.println("segunda ejecucion");
-
                         
             pst.setString(1, id);
 
             result = pst.executeUpdate();
-            
-            System.out.println("tercera ejecucion");
-
 
             Conexion.desconectarStm(pst);
             c.commit(); 
             
-            System.out.println("commit ejecucion");
-
             Conexion.desconectar(c);
             return result;  
 
@@ -225,7 +215,6 @@ public class ProductoDAOImpl implements ProductoDAO{
             System.err.println(e);
             Conexion.desconectarStm(pst);
             c.rollback();
-            System.out.println("rollback ejecucion");
 
             Conexion.desconectar(c);
         }

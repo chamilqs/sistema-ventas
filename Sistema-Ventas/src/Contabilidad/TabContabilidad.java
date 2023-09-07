@@ -1038,7 +1038,6 @@ public class TabContabilidad extends javax.swing.JPanel {
     public void revisarCuentasSaldadas() {
         
        try {
-           System.out.println("funciona");
            DefaultTableModel modelo = (DefaultTableModel) TableCobrar.getModel();
 
            for (int row = modelo.getRowCount() - 1; row >= 0; row--) {

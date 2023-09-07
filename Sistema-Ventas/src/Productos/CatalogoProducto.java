@@ -54,8 +54,6 @@ public class CatalogoProducto extends javax.swing.JPanel {
     }
     
     private void inicializar(){
-        System.out.println("Nivel de acceso: " + u.getNivelAcceso());
-
          
         if ("user".equals(u.getNivelAcceso())) {
             panelLateralDerecho.setVisible(false);
@@ -80,7 +78,6 @@ public class CatalogoProducto extends javax.swing.JPanel {
            tablaCatalogo.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
     
                 public void valueChanged(ListSelectionEvent e) {
-                    System.out.println("Selection Event Triggered");
 
                     if (!e.getValueIsAdjusting()) {
                         int selectedRow = tablaCatalogo.getSelectedRow();
@@ -88,7 +85,6 @@ public class CatalogoProducto extends javax.swing.JPanel {
                             Object selectedProductName = tablaCatalogo.getValueAt(selectedRow, 1);
                             if (selectedProductName != null) {
                                 String productName = selectedProductName.toString();
-                                System.out.println("Selected Product Name: " + productName);
                                 LblProductoSelect.setText(productName);
                             }
                         }

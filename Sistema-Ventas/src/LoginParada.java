@@ -87,7 +87,7 @@ public class LoginParada extends javax.swing.JFrame {
         });
         PanelMoveLogin.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 26, 25));
 
-        getContentPane().add(PanelMoveLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 30));
+        getContentPane().add(PanelMoveLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 40));
 
         jPanel1.setBackground(new java.awt.Color(24, 39, 72));
         jPanel1.setPreferredSize(new java.awt.Dimension(640, 437));
@@ -175,8 +175,8 @@ public class LoginParada extends javax.swing.JFrame {
 
     private void TxtCorreo_Nombre_UserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtCorreo_Nombre_UserMousePressed
           if (TxtCorreo_Nombre_User.getText().equals("Correo o Usuario")) {
-        TxtCorreo_Nombre_User.setText("");
-        TxtCorreo_Nombre_User.setForeground(Color.black);
+                TxtCorreo_Nombre_User.setText("");
+                TxtCorreo_Nombre_User.setForeground(Color.black);
         }
 
         if (String.valueOf(TxtPassword.getPassword()).isEmpty()) {
@@ -254,30 +254,24 @@ public class LoginParada extends javax.swing.JFrame {
             UsuarioDAOImpl ud = new UsuarioDAOImpl();
             
             u = ud.get(id);
-            
-            // JOptionPane.showMessageDialog(this, "¡Inicio de sesión exitoso! Rol: " + usuarioRol);
+
             LblNotificacion.setForeground(Color.green);
             LblNotificacion.setText("Credenciales correctas");
             
-           // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             LocalDateTime fechaHoraActual = LocalDateTime.now();
             u.setLogin(fechaHoraActual);
-            ud.actualizarLogin(u);
-            System.out.println(fechaHoraActual);
-            
-            //u.setLogout(fechaHoraActual);
-                
+            ud.actualizarLogin(u);               
                     
             FramePrincipal form = new FramePrincipal(u);
             form.setUsuarioRol(u.getNivelAcceso()); // Pasa el rol de usuario
             form.inicializar(); 
             form.setVisible(true);
             this.dispose();
+            
         } else {
             // Credenciales incorrectas
             LblNotificacion.setForeground(Color.red);
             LblNotificacion.setText("Credenciales incorrectas");
-            //JOptionPane.showMessageDialog(this, "Credenciales incorrectas");
         }
     } catch (SQLException e) {
         e.printStackTrace();

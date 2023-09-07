@@ -487,7 +487,7 @@ public class FacturacionVenta extends javax.swing.JPanel {
         LblTitulo.setBackground(new java.awt.Color(255, 255, 255));
         LblTitulo.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         LblTitulo.setForeground(new java.awt.Color(0, 112, 192));
-        LblTitulo.setText("Facturacion");
+        LblTitulo.setText("Facturación");
         ContentPanelVenta.add(LblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         TituloIDVenta.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -617,13 +617,11 @@ public class FacturacionVenta extends javax.swing.JPanel {
     public void guardarDatos() {
         guardarLabelValues();
         guardarTablaData();
-        System.out.println("Datos guardados");
     }
 
     public void restaurarDatos() {
         restaurarLabelValues();
         restaurarTablaData();
-        System.out.println("Datos restaurados");
     }
 
     private void guardarTablaData() {
@@ -658,7 +656,6 @@ public class FacturacionVenta extends javax.swing.JPanel {
 
     private void restaurarLabelValues() {
 
-        //LblIDVenta.setText(labelValues.get("LblIDVenta"));
         LblNombreProducto.setText(labelValues.get("LblNombreProducto"));
         LblSizeProducto.setText(labelValues.get("LblSizeProducto"));
         LblPrecioProducto.setText(labelValues.get("LblPrecioProducto"));
@@ -668,7 +665,6 @@ public class FacturacionVenta extends javax.swing.JPanel {
     public void borrarDatos() {
         borrarLabelValues();
         borrarTablaData();
-        System.out.println("Datos borrados");
     }
 
     private void borrarTablaData() {
@@ -1035,15 +1031,8 @@ if (productosSuperanStock) {
 
         if (rs.next()) {
             if (tablaProductosVentas.getRowCount() > 0) {
-             /*  if (txtNombreCliente.getText().isEmpty()) {
-                    LblAdvertencia.setText("*");
-                    LblAdvertencia.setForeground(Color.RED);
-                    JOptionPane.showMessageDialog(this, "Debes ingresar el nombre del cliente antes de facturar.",
-                            "Advertencia", JOptionPane.WARNING_MESSAGE);
-                } else {*/
                     guardarDatos();
                     condicionesCumplidas = true;
-               // }
             } else {
                 JOptionPane.showMessageDialog(this, "Debes ingresar al menos un producto en la tabla antes de facturar.",
                         "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -1175,7 +1164,6 @@ if (productosSuperanStock) {
     public void processInvoice() {
 
         if (!sesionCajaAbierta()) {
-            System.out.println("Debe abrir la caja primero antes de hacer una venta.");
             return;
         }
 
@@ -1202,7 +1190,6 @@ if (productosSuperanStock) {
                         }
 
                 } else if (Devuelto < 0) {
-                        System.out.println("La suma es incompleta, esto podría generar una deuda.");
                         int deudaConfirmation = JOptionPane.showConfirmDialog(null, "¿Desea abrir la instancia de deuda?", "Deuda", JOptionPane.YES_NO_OPTION);
 
                         if (deudaConfirmation == JOptionPane.YES_OPTION) {
@@ -1332,8 +1319,6 @@ if (productosSuperanStock) {
         document.close();
         writer.close();
 
-        System.out.println("Factura generada exitosamente en " + nombreArchivo);
-
         // Open the invoice automatically
         abrirFactura(nombreArchivo);
         
@@ -1357,7 +1342,6 @@ if (productosSuperanStock) {
             File archivo = new File(nombreArchivo);
             if (archivo.exists() && archivo.canWrite()) {
                 archivo.renameTo(new File(nombreArchivo + "_cerrada.pdf")); // Cambiar el nombre del archivo
-                System.out.println("Factura cerrada o archivo renombrado: " + nombreArchivo);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -1369,13 +1353,11 @@ if (productosSuperanStock) {
             File archivo = new File(nombreArchivo);
             if (archivo.exists()) {
                 if (!archivo.canWrite()) {
-                    System.out.println("El archivo está siendo utilizado por otro proceso. Cerrando y abriendo nuevamente.");
                     Desktop.getDesktop().open(archivo);
                 } else {
                     Desktop.getDesktop().open(archivo);
                 }
             } else {
-                System.out.println("El archivo no existe.");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -1454,14 +1436,11 @@ if (productosSuperanStock) {
             message.setContent(multipart);
 
             // Enviar el mensaje
-            System.out.println("Enviando correo a: " + destinatario);
             Transport.send(message);
-            System.out.println("Correo enviado exitosamente con el archivo adjunto.");
            // JOptionPane.showMessageDialog(null, "Correo enviado exitosamente con el archivo adjunto.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             CleanCorreos();
         } catch (MessagingException e) {
             String errorMessage = "Error al enviar el correo:\n" + e.getMessage();
-            System.err.println(errorMessage);
 
             JOptionPane.showMessageDialog(null, errorMessage, "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
@@ -1557,27 +1536,8 @@ if (productosSuperanStock) {
         totalProductosParagraph.setSpacingBefore(20f);
         document.add(totalProductosParagraph);
 
-        // Calcular el total recibido y el total devuelto      
-//        String montoIngresadoTx = montoIngresado.getText();
-//        int montoIngresadoInt = Integer.parseInt(montoIngresadoTx);
-//
-//        float Devuelto = montoIngresadoInt - totalProductos;
-
-        // Agregar el total recibido y el total devuelto al PDF
-//        String montoIngresadoTxt = montoIngresado.getText();
-//        Paragraph totalRecibidoParagraph = new Paragraph("Total Recibido: $" + montoIngresadoTxt);
-//        totalRecibidoParagraph.setAlignment(Element.ALIGN_RIGHT);
-//        document.add(totalRecibidoParagraph);
-
-        //Paragraph totalDevueltoParagraph = new Paragraph("Total Devuelto: $" + Devuelto);
-//        totalDevueltoParagraph.setAlignment(Element.ALIGN_RIGHT);
-//        document.add(totalDevueltoParagraph);
-
-
         document.close();
         writer.close();
-
-        System.out.println("Factura generada exitosamente en " + nombreArchivo);
 
         // Open the invoice automatically
         abrirFactura(nombreArchivo);
@@ -1681,35 +1641,16 @@ if (productosSuperanStock) {
         totalProductosParagraph.setSpacingBefore(20f);
         document.add(totalProductosParagraph);
 
-        // Calcular el total recibido y el total devuelto      
-//        String montoIngresadoTx = montoIngresado.getText();
-//        int montoIngresadoInt = Integer.parseInt(montoIngresadoTx);
-//
-//        float Devuelto = montoIngresadoInt - totalProductos;
-
-        // Agregar el total recibido y el total devuelto al PDF
-//        String montoIngresadoTxt = montoIngresado.getText();
-//        Paragraph totalRecibidoParagraph = new Paragraph("Total Recibido: $" + montoIngresadoTxt);
-//        totalRecibidoParagraph.setAlignment(Element.ALIGN_RIGHT);
-//        document.add(totalRecibidoParagraph);
-
-        //Paragraph totalDevueltoParagraph = new Paragraph("Total Devuelto: $" + Devuelto);
-//        totalDevueltoParagraph.setAlignment(Element.ALIGN_RIGHT);
-//        document.add(totalDevueltoParagraph);
-
-
         document.close();
         writer.close();
-
-        System.out.println("Factura generada exitosamente en " + nombreArchivo);
 
         // Open the invoice automatically
         abrirFactura(nombreArchivo);
         //CleanAll();
         
         // Send the invoice by email
-        String remitente = "angelo.ferreras23@gmail.com";
-        String contraseña = "ixptbjicfedqabod";
+        String remitente = "devsamil26@gmail.com";
+        String contraseña = "devsamil2005";
         String destinatario = txtCorreo.getText();
         String asunto = "Factura Adjunta";
         String mensaje = "Estimado cliente, adjuntamos la factura en PDF de su compra en parada fria.";
@@ -1725,7 +1666,6 @@ if (productosSuperanStock) {
             printJob.print(pdfDoc, null);
             inputStream.close();
         } else {
-            System.out.println("No se encontró una impresora disponible.");
         }
     } catch (DocumentException e) {
         e.printStackTrace();
@@ -1867,7 +1807,6 @@ if (productosSuperanStock) {
    
 
     public void metodoB() {
-        System.out.println("Método Clean activado.");
         confirmarLimpieza(true);
     }
 

@@ -808,7 +808,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c0" green="70" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Facturacion"/>
+            <Property name="text" type="java.lang.String" value="Facturaci&#xf3;n"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
