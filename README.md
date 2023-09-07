@@ -13,5 +13,6 @@ Características Destacadas:
 - Seguridad y Acceso Controlado: Implementa un sistema de seguridad sólido que garantiza que solo los usuarios autorizados puedan acceder a ciertas funciones y datos sensibles. Los roles y permisos se pueden configurar de acuerdo a la estructura organizativa de la empresa.
 - Interfaz de Usuario Intuitiva: Diseñada con una interfaz de usuario amigable que permite a los empleados familiarizarse rápidamente con el sistema, reduciendo la curva de aprendizaje.
 - Escalabilidad: El sistema está diseñado para crecer con la empresa, lo que significa que puede adaptarse a medida que la organización expande sus operaciones y su catálogo de productos.
-- Integración: Puede integrarse con otros sistemas empresariales, como contabilidad o gestión de recursos humanos, para una gestión global y eficiente.
+
+Se está trabajando para agregarle nuevas y modernas funciones que ayuden a los negocios que implementen el sistema.
 
