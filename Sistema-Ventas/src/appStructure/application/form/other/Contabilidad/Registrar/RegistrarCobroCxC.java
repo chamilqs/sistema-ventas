@@ -280,7 +280,6 @@ public class RegistrarCobroCxC extends javax.swing.JDialog {
 
         guardarCambiosSeleccionados();
         FormCxC tc = new FormCxC();
-        tc.DatosCuentaCobrar();
         tc.revisarCuentasSaldadas();
         revisar = true;
         this.dispose();

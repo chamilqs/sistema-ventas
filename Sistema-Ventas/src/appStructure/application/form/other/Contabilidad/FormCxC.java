@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import appStructure.application.form.other.Contabilidad.Registrar.RegistrarCobroCxC;
+import java.awt.HeadlessException;
 
 /**
  *
@@ -199,9 +200,7 @@ public class FormCxC extends javax.swing.JPanel {
 
             TableCobrar.setModel(modelo);
             c.desconectar();
-        } catch (SQLException ex) {
-            Logger.getLogger(FormCxC.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(FormCxC.class.getName()).log(Level.SEVERE, null, ex);
         }
     } else {
@@ -226,26 +225,22 @@ public class FormCxC extends javax.swing.JPanel {
         String deuda = TableCobrar.getValueAt(selectedRow, 3).toString();
         String totalFaltante = TableCobrar.getValueAt(selectedRow, 4).toString();
 
-        // Crear un nuevo diálogo de RegistroPagoCobrar
         RegistrarCobroCxC dialog = new RegistrarCobroCxC(fr, true);
 
-        //  los campos en el diálogo con los datos recopilados
         dialog.setDatosRegistro(IdVenta, clienteDeudor, deuda, totalFaltante);
 
         dialog.setVisible(true);
     }
-    private void eliminarCuentaPorCobrar(int idVenta) {
-        try {
+    private void eliminarCuentaPorCobrar(String idVenta) {
+        try(Connection connection = c.getConexion()) {
             String query = "DELETE FROM cuentaporcobrar WHERE idVenta = ?";
-            try (Connection connection = c.getConexion();
-                 PreparedStatement statement = connection.prepareStatement(query)) {
-                statement.setInt(1, idVenta);
-                statement.executeUpdate();
-            }
-            c.desconectar();
+      
+            PreparedStatement statement = connection.prepareStatement(query); 
+            statement.setString(1, idVenta);
+            statement.executeUpdate();
+            
+
         } catch (SQLException ex) {
-            Logger.getLogger(FormCxC.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormCxC.class.getName()).log(Level.SEVERE, null, ex);
         }
      }
@@ -257,20 +252,15 @@ public class FormCxC extends javax.swing.JPanel {
            for (int row = modelo.getRowCount() - 1; row >= 0; row--) {
                double totalFaltante = Double.parseDouble(modelo.getValueAt(row, 4).toString());
                if (totalFaltante == 0.00) {
-                   int idCuenta = Integer.parseInt(modelo.getValueAt(row, 0).toString());
+                   String idVenta = String.valueOf(modelo.getValueAt(row, 0));
                    String nombreCliente = modelo.getValueAt(row, 1).toString();
 
-                   // Mostrar mensaje de cuenta saldada
+                    eliminarCuentaPorCobrar(idVenta);                 
                    JOptionPane.showMessageDialog(this, "Cuenta del cliente " + nombreCliente + " fue saldada.", "Cuenta Saldada", JOptionPane.INFORMATION_MESSAGE);
 
-                   // Eliminar la fila de la tabla
-                   modelo.removeRow(row);
-
-                   // Eliminar la cuenta de la base de datos
-                   eliminarCuentaPorCobrar(idCuenta);
                }
            }
-       } catch (Exception ex) {
+       } catch (HeadlessException | NumberFormatException ex) {
            Logger.getLogger(FormCxC.class.getName()).log(Level.SEVERE, null, ex);
        }
    }

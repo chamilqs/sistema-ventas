@@ -41,7 +41,7 @@ public class Application extends javax.swing.JFrame {
         Notifications.getInstance().setJFrame(this);
         
         // Intenta crear el archivo de bloqueo
-        lockFile = new File(LOCK_FILE_PATH);
+        /*lockFile = new File(LOCK_FILE_PATH);
         try {
             if (lockFile.createNewFile()) {
                 // El archivo de bloqueo se creó correctamente, lo que significa que esta instancia es la única en ejecución
@@ -52,7 +52,7 @@ public class Application extends javax.swing.JFrame {
             }
         } catch (IOException e) {
             System.out.println(e);
-        }
+        }*/
     }
     
     public Application(Usuario u) {
